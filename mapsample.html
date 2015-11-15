@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script
+src="http://maps.googleapis.com/maps/api/js">
+</script>
+
+
+</head>
+
+<body>
+<div id="googleMap" style="width:500px;height:380px;"></div>
+  <div id="formdiv">
+  <form width="50vw" height="50vw">
+      
+      <p>Please enter your location details</p>
+
+      <input type="number" id="latData" name="latData" min="0" max="90" size="30vw" required>
+
+      <input type="number" id="lngData" min="0" max="90" size="30vw" required>
+      <input type="submit" id="submitbutton">
+
+
+    </form>
+  <script>
+  var myCenter=new google.maps.LatLng(latData,lngData);
+
+  function initialize()
+  {
+  var mapProp = {
+    center:myCenter,
+    zoom:5,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+    };
+
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+  var marker=new google.maps.Marker({
+    position:myCenter,
+    });
+
+  marker.setMap(map);
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
+
+
+</body>
+</html>
