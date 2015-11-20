@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>XX Calendar</title>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"> </script>
+  <!--jQuery UI and style sheets next 4 lines.  -->
+  <link rel="stylesheet" href="../../jquery-ui-1.11.4/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="../../jquery-ui-1.11.4/jquery-ui.js"></script>
+  <!--<link rel="stylesheet" href="http://code/jquery.com/resources/demos/style.css">
+   
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZgE4487vDwz7ZksO5AAOMqFuuENHT_CY&signed_in=true"
+    //     async defer>
+</script> -->
+
+</head>
+<body>
+ <script src="http://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true">
+   </script>
+  <script>
+
+$(function(){      //enclose all code in this function 
+   
+      // create the Opening Page
+    $divtop= $('<div></div>').addClass("overallpage");
+    $headx =$('<p></p>').addClass("calMonth").text("TEST MY MAPS 2015"); 
+    $divtop.append($headx);
+    $('body').append($divtop);
+
+ //*** MAP FORM
+   
+ //   $mapform=$('<div></div>').attr("id","mapdiv").addClass("mapsurround");
+
+    $mapdiv=$('<div id="map"></div>');
+    $mapdiv.addClass("mapstyle");
+    $('body').append($mapdiv);
+ //   
+    $restdiv=$('<div id="restdiv"></div>');
+    $('body').append($restdiv);
+    $mapform=$('<form id="mapform"></form>');
+    $restdiv.append($mapform);
+    $findbutton=$('<button id="findbutton">FIND</button>');
+
+    $pcodelabel=$('<p class="pcode">Enter your Postcode</p>');
+    $postcodebox=('<input type="text" id="postcode"></input>');
+    $mapform.append($pcodelabel).append($postcodebox).append($findbutton);
+  //  $coords=$('<input id="coordinates"></input>').attr("type","text");
+  //  $coords.val('40.714224,-73.961452');  //how do i split this?
+  //  $map.append($coords);
+ 
+ // Need to get postcode value from form
+ //**** GO get values from other site
+  
+   makeCorsRequest();
+
+
+// Make the actual CORS request.
+function makeCorsRequest() {
+      var xhr = new XMLHttpRequest();
+
+      var xhr = xhr.open('GET', encodeURI('https://api.postcode.io/postcodes/nw35dx', true));
+      // if (!xhr) {
+      //   alert('Well....... that didnt work now did it?');
+      //   return;
+      // }
+
+  // Response handlers.
+    xhr.onload = function() {
+        if (xhr!==200){
+            console.log('Not OK',+ xhr.status);
+        }
+        var text = xhr.responseText;
+        var data=JSON.parse(xhr.responseText);
+        console.log(data.result.admin_district);
+     
+         };
+
+    xhr.onerror = function() {
+         alert('Woops, there was an error making the request.');
+         };
+
+
+    xhr.send();
+}
+
+//*** MAP SECTION
+
+    createDirections(); 
+
+function createDirections (){
+
+    var myLat=45.714224;
+    var myLng=-73.961452;
+
+    var mapOptions={ 
+    center:new google.maps.LatLng(myLat,myLng),
+    zoom:12   };
+
+    var mylatlng = new google.maps.LatLng(myLat, myLng);
+    console.log("mylatlng", mylatlng);
+    var map= new google.maps.Map(document.getElementById("map"),mapOptions);
+    var marker = new google.maps.Marker({
+            position:{lat: myLat, lng: myLng},
+            map: map,
+            title: 'Your task is here!',
+          });
+         console.log("made it to after marker");
+      
+     //   marker.setMap(map);
+    }
+});
+
+</script>
+
+</body>
+</html>

@@ -1,5 +1,16 @@
 .shaded {
-  background-color: aqua; }
+  background-color: #99ccff; }
+
+.pcode {
+  margin: 0;
+  font-family: 1vw Helvetica, Arial;
+  position: relative;
+  left: 1vw; }
+
+.pcode2 {
+  position: relative;
+  font-family: 1vw Helvetica, Arial;
+  left: 1vw; }
 
 .oldtext {
   margin-left: 2vw;
@@ -22,9 +33,10 @@
   font-size: 2vw; }
 
 .textbox {
-  width: 40vw;
-  height: 12vw;
+  width: 30vw;
+  height: 10vw;
   position: relative;
+  display: inherit;
   left: 3vw;
   font-size: 1vw;
   font-family: Arial;
@@ -38,21 +50,34 @@
   text-align: center; }
 
 #postcode {
-  size: 20vw; }
+  size: 10vw;
+  height: 1.5vw;
+  position: relative;
+  left: 3vw; }
+
+#mapviewbutton {
+  size: 15;
+  color: green;
+  position: relative;
+  top: 5vw;
+  height: 3vw; }
+
+#taskform {
+  width: 50vw; }
 
 #findbutton {
   position: relative;
-  left: 10vw;
+  left: 4vw;
   display: inline;
   width: 7vw;
   color: red;
-  font-weight: bold;
   height: 2vw;
   margin-top: 1vw; }
 
 #submitbutton {
   position: relative;
-  left: 30vw;
+  left: 11vw;
+  top: 3vw;
   display: inline;
   width: 7vw;
   color: red;
@@ -61,7 +86,7 @@
 
 #cancelbutton {
   position: relative;
-  left: 2vw;
+  left: 3vw;
   display: inline;
   width: 7vw;
   color: blue;
@@ -95,32 +120,62 @@
   background-color: #D9D9D9;
   top: 12vw; }
 
+#slider-range {
+  background-color: orange;
+  width: 40vw;
+  position: relative;
+  left: 2vw; }
+
+#entireDiv {
+  width: 60vw;
+  background-color: #ffcce6;
+  height: 30vw; }
+
+#formdiv2 {
+  width: 70vw;
+  background-color: #e5ffe5;
+  height: 60vw; }
+
 #mapform {
   width: 100%;
   height: 100%;
   background-color: white; }
+
+#mapform2 {
+  width: 100%;
+  height: 50vw;
+  background-color: #ffd9b3; }
 
 #restdiv {
   background-color: orange;
   width: 60%; }
 
 .sliderstyle {
-  border: 0;
-  color: #f6931f;
-  font-weight: bold; }
+  border: 1px;
+  border-style: solid;
+  border-color: black;
+  color: black;
+  width: 20vw; }
 
 .mapstyle {
   background-color: yellow;
   height: 20vw;
   width: 20vw;
   float: right;
-  top: 5vw;
-  right: 40vw; }
+  position: relative;
+  top: -15vw;
+  left: 8vw; }
 
-#mapdiv {
-  background-color: green;
-  width: 30%;
+.mapstyle2 {
+  background-color: yellow;
+  height: 25vw;
+  width: 25vw;
+  float: right;
   position: relative; }
+
+#mapdiv1 {
+  background-color: green;
+  width: 30%; }
 
 .coordsBox {
   width: 30%; }
@@ -129,13 +184,25 @@
   display: inline;
   position: absolute;
   top: 10vw;
-  left: 25vw;
+  left: 10vw;
   float: left;
   border-style: solid;
   border-color: black;
   background-color: aqua;
   width: 40vw;
   height: 20vw; }
+
+.mapsurround2 {
+  display: inline;
+  position: absolute;
+  top: 5vw;
+  left: 10vw;
+  float: left;
+  border-style: solid;
+  border-color: black;
+  background-color: yellow;
+  width: 40vw;
+  height: 30vw; }
 
 #map {
   border-color: blue;
@@ -151,12 +218,6 @@
   line-height: 3vw;
   padding-left: 1vw;
   width: 50%; }
-
-#mapbutton {
-  size: 15;
-  color: green;
-  position: relative;
-  top: 5vw; }
 
 .cellformat {
   width: 13%;
@@ -191,7 +252,7 @@
 
 .rowformat {
   width: 100%;
-  background-color: aqua; }
+  background-color: #99ccff; }
 
 .inactive {
   border: #C0C0C0 solid; }
@@ -203,7 +264,7 @@
   display: inline;
   position: absolute;
   top: 10vw;
-  left: 25vw;
+  left: 20vw;
   float: left;
   border-style: solid;
   border-color: black;

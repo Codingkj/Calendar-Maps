@@ -1,6 +1,17 @@
 
 $headfont:4vw "Helvetica Neue", Helvetica, Arial;
-
+$requestfont:1vw Helvetica,Arial;
+.pcode{
+  margin:0;
+  font-family: $requestfont;
+  position:relative;
+  left:1vw;
+}
+.pcode2{
+  position:relative;
+  font-family: $requestfont;
+  left:1vw;
+}
 .oldtext{
   margin-left: 2vw;
   margin-bottom: 0;
@@ -22,9 +33,10 @@ $headfont:4vw "Helvetica Neue", Helvetica, Arial;
   font-size: 2vw;
 }
 .textbox{
-  width:40vw;
-  height:12vw;
+  width:30vw;
+  height:10vw;
   position: relative;
+  display:inherit;
   left:3vw;
   font-size: 1vw;
   font-family: Arial;

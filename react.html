@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React</title>
+    <script src="https://fb.me/react-0.14.2.js"></script>
+    <script src="https://fb.me/react-dom-0.14.2.js"></script>
+    
+  </head>
+  <body>
+
+
+    
+  
+  <div id="react-app"></div>
+  <script>
+      var h1Element = React.createElement('h1',{className:'main'},'Hello'); //creates element
+      var parentElement =document.getElementById('react-app');
+      ReactDOM.render(h1Element,parentElement);  //to render it (what,parentElement)
+
+    </script>
+  </body>
+</html>

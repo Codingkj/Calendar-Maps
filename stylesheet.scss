@@ -2,31 +2,99 @@
 @import "calTextformats";
 @import "calButtons";
 
+#mapview-mapdiv{
+}
+#slider-range{
+  background-color: orange;
+  width:40vw;
+  position:relative;
+  left:2vw;
+}
+#dateRange{
+}
+#entireDiv{
+  width:60vw;
+  background-color: #ffcce6;
+  height:30vw;
+}
+#formdiv2{
+  width:70vw;
+  background-color: #e5ffe5;
+  height:60vw;
+}
+#mapform{
+  width:100%;
+  height:100%;
+  background-color:white;
+}
+#mapform2{
+  width:100%;
+  height:50vw;
+  background-color:#ffd9b3;
+}
+#restdiv{
+  background-color:orange;
+  width:60%;
+}
+.sliderstyle{
+  border:1px;
+  border-style: solid;
+  border-color: black;
+  color:black;
+  width:20vw;
+}
+
 .mapstyle{
   background-color: yellow;
   height: 20vw;
   width: 20vw;
-
-
+  float:right;
+  position: relative;
+  top:-15vw;
+  left:8vw;
+  
 }
-#mapdiv{
+.mapstyle2{
+  background-color: yellow;
+  height: 25vw;
+  width: 25vw;
+  float:right;
+  position: relative;
+}
+#mapdiv1{
   background-color: green;
+  width:30%;
+  
+}
+.coordsBox{
+  width:30%;
 }
 
 .mapsurround{
   display:inline;
   position:absolute;
   top:10vw;
-  left:25vw;
+  left:10vw;
   float:left;
   border-style: solid;
   border-color: black;
   background-color: aqua;
-  width:45vw;
-  height:25vw;
+  width:40vw;
+  height:20vw;
+}
+.mapsurround2{
+  display:inline;
+  position:absolute;
+  top:5vw;
+  left:10vw;
+  float:left;
+  border-style: solid;
+  border-color: black;
+  background-color: yellow;
+  width:40vw;
+  height:30vw;
 }
  #map {
-  
   border-color: blue;
   border-style: solid;
   border-width: 0.3vw;
@@ -34,17 +102,14 @@
 #floatingPanel {
   background-color: #fff;
   padding: 0.5vw;
-  border: 0.5vw solid #999;
+  border: 2px solid #999;
   text-align: center;
   font-family: 'Roboto','sans-serif';
-  line-height: 4vw;
+  line-height: 3vw;
   padding-left: 1vw;
+  width:50%;
   }
-#mapbutton{
-  size:15;
-  color:green;
-  position: relative;
-}
+
 .cellformat{
   width:13%;
   padding:1.5vw;
@@ -80,7 +145,7 @@ border-color: blue;
 
 .rowformat{
   width:100%;
-  background-color: aqua;
+  background-color: #99ccff;
 }
 
 .inactive{
@@ -93,7 +158,7 @@ border-color: blue;
   display:inline;
   position:absolute;
   top:10vw;
-  left:25vw;
+  left:20vw;
   float:left;
   border-style: solid;
   border-color: black;
