@@ -8,9 +8,20 @@
 #mapviewbutton{
   size:15;
   color:green;
+  font-weight: bold;
   position: relative;
-  top:5vw;
-  height:3vw;
+  top:8vw;
+  height:2vw;
+}
+#gobackbutton{
+  position:relative;
+  left:3vw;
+  top:3vw;
+  display:inline;
+  width:7vw;
+  color: blue;
+  height: 2vw;
+  margin-top: 1vw;
 }
 #taskform{
   width:50vw;

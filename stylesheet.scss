@@ -2,7 +2,15 @@
 @import "calTextformats";
 @import "calButtons";
 
+
 #mapview-mapdiv{
+}
+#taskdiv{
+  width:40vw;
+  height: 20vw;
+  position:absolute;
+  top:15vw;
+  left:2vw;
 }
 #slider-range{
   background-color: orange;
@@ -19,8 +27,8 @@
 }
 #formdiv2{
   width:70vw;
-  background-color: #e5ffe5;
-  height:60vw;
+  background-color: #A1D490;
+  height:40vw;
 }
 #mapform{
   width:100%;
@@ -30,7 +38,7 @@
 #mapform2{
   width:100%;
   height:50vw;
-  background-color:#ffd9b3;
+  background-color:#A1D490;
 }
 #restdiv{
   background-color:orange;
@@ -41,7 +49,7 @@
   border-style: solid;
   border-color: black;
   color:black;
-  width:20vw;
+  width:16vw;
 }
 
 .mapstyle{
@@ -91,8 +99,6 @@
   border-style: solid;
   border-color: black;
   background-color: yellow;
-  width:40vw;
-  height:30vw;
 }
  #map {
   border-color: blue;
@@ -167,7 +173,7 @@ border-color: blue;
   height:25vw;
 }
 
-.overallpage{
+.month-header{
   z-index:2;
   border-bottom: 2px;
   border-style: solid;
