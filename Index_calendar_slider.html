@@ -259,9 +259,7 @@ $(function(){      //enclose all code in this function
     $taskform.append($textfield);
     $mapdiv1=$('<div id="map"></div>').addClass("mapstyle");
     $taskform.append($mapdiv1);
-  //  $coords=$('<input id="coordinates"></input>').attr("type","text");
-  //  $coords.val('40.714224,-73.961452');  //how do i split this?
-  //  $mapdiv1.append($coords);
+ 
     $findbutton=$('<button id="findbutton" type="button">FIND</button>');
     $pcodelabel=$('<p class="pcode">Enter Postcode for task (if there is one):</p>');
     $postcodebox=('<input type="text" id="postcode"></input>');
@@ -274,7 +272,6 @@ $(function(){      //enclose all code in this function
     $taskform.append($submitfield).append($cancelfield);;
     $formdiv.append($taskform);
     $('body').append($formdiv);
-
 
 
  //** Second Form
@@ -477,26 +474,36 @@ $("#mapviewbutton").click(function () {   // to display all tasks on 1 map
                               mapTypeId: google.maps.MapTypeId.ROADMAP
                             });
 
-                   
-              //      $textbox4.append($ptext4);
+          
 
-                    var marker, i;
+                    var marker, i, tkcount;
+                    var tkcount=0;
                     var infowindow = new google.maps.InfoWindow();
+                    for (i=ui.values[0];i<ui.values[1]; i++){
+                        if (taskEntries[i]!==""){
+                            tkcount=tkcount+1;
+                        }
+                    }
+                    $taskcount=$('<p>There are,"tkcount,"tasks in this range:</p>');
+                    $taskdiv.append($taskcount);
+
                     for (i=counter;i<ui.values[1]; i++){
                         marker = new google.maps.Marker({
                             position: new google.maps.LatLng(locationsArray[i][0], locationsArray[i][1]),
                             map: map,
                             
                             });
+
                         if (taskEntries[i]!==""){
+                            var numtasks=numtasks+1;
                             $textbox4=$('<div id="textbox4"></div>');
                             $ptext4=$('<p></p>');
                             $ptext4.val=taskEntries[i];
                             console.log("what text you got?",$ptext4.val);
                            // if (ptext4.val!==""{
-                            $textbox4.append(i," Nov: ",$ptext4.val);
-                            $taskdiv.append($textbox4); 
                             $linebr=$('<br></br>'); 
+                            $textbox4.append(i," Nov: ",$ptext4.val).append($linebr);
+                            $taskdiv.append($textbox4);  
                             $taskdiv.append($linebr);
                             $taskdiv.append($linebr);
                             }
@@ -508,7 +515,7 @@ $("#mapviewbutton").click(function () {   // to display all tasks on 1 map
                                 }
                               })(marker, i));
                         }   //end of for loop
-
+                    
 
                           
             },  //end of slider stop function
@@ -520,8 +527,8 @@ $( "#gobackbutton" ).click(function(){
     event.preventDefault(); 
     event.stopPropagation();   
                             
-    $('#formdiv2').addClass("hidden").removeClass("mapsurround2"); // hide the form                          
-   
+    $('#formdiv2').addClass("hidden").removeClass("mapsurround2");                          
+    $('#textbox4')=$('<div id="textbox4"></div>');
     });    
 
 
@@ -532,6 +539,10 @@ $( "#findbutton" ).click(function(){
           //reset the date selected
     
     var search=$('#postcode').val();
+    // var characterReg = /^([a-zA-Z0-9]{0,6})$/; //validate for no more than 6 numbers
+    // if(!characterReg.test(search)) {
+    //     $(this).after('<span class="error-text">Between 4 - 6 characters please.</span>');
+    // }
     var url=('http://api.postcodes.io/postcodes/'+ search);
     console.log("url is...",url);
     var xhr = new XMLHttpRequest();
@@ -562,8 +573,8 @@ $( "#findbutton" ).click(function(){
         console.log("Storage entry is: ",locationsArray[dateselected]);
     };
     xhr.send();
-
-});
+    
+  });
 
 
 });

@@ -1,12 +1,25 @@
 .shaded {
   background-color: #99ccff; }
 
+.error-text {
+  font-size: 0.8vw;
+  left: -8vw;
+  top: -1vw;
+  color: red;
+  font-style: bold; }
+
 #textbox4 {
-  display: inline;
-  width: 30vw;
-  height: 7vw;
+  display: inline-block;
+  width: 25vw;
   background-color: white;
-  margin-left: 2vw; }
+  margin-left: 2vw;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  text-align: left;
+  margin-left: 1vw;
+  font-size: 1vw;
+  padding: 2vw; }
 
 .pcode {
   margin: 0;
@@ -76,8 +89,8 @@
 
 #gobackbutton {
   position: relative;
-  top: 30vw;
   left: 3vw;
+  top: 3vw;
   display: inline;
   width: 7vw;
   color: blue;
@@ -151,7 +164,7 @@
 
 #slider-range {
   background-color: orange;
-  width: 40vw;
+  width: 30vw;
   position: relative;
   left: 2vw; }
 
@@ -197,8 +210,8 @@
 
 .mapstyle2 {
   background-color: yellow;
-  height: 25vw;
-  width: 25vw;
+  height: 30vw;
+  width: 35vw;
   float: right;
   position: relative; }
 
