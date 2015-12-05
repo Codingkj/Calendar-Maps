@@ -27,6 +27,8 @@
    </script>
   <script>
 
+  function modelInit(){};
+
 $(function(){      //enclose all code in this function 
    
     var days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]; 
@@ -40,9 +42,7 @@ $(function(){      //enclose all code in this function
           locationsArray[i]=[];
         }
     var bounds = new google.maps.LatLngBounds();
-     // for (var sites=0;sites<dates30.length;sites++){
-     //    locationsArray[sites]={};
-     // }  the old way.
+    
 
   // create the Opening Page
     $divtop= $('<div></div>').addClass("month-header");
@@ -59,14 +59,14 @@ $(function(){      //enclose all code in this function
     row1.setAttribute("class","rowformat");
     var row2  = table1.insertRow(1);
     row1.setAttribute("class","rowformat");
-   var row3  = table1.insertRow(2);
-   row1.setAttribute("class","rowformat");
+    var row3  = table1.insertRow(2);
+    row1.setAttribute("class","rowformat");
     var row4  = table1.insertRow(3);
     row1.setAttribute("class","rowformat");
     var row5  = table1.insertRow(4);
     row1.setAttribute("class","rowformat");
-   var row6  = table1.insertRow(5);
-   row1.setAttribute("class","rowformat");
+    var row6  = table1.insertRow(5);
+    row1.setAttribute("class","rowformat");
     var row7 = table1.insertRow(6);
     row1.setAttribute("class","rowformat");
     var row8 = table1.insertRow(7);
